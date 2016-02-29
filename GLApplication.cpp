@@ -18,6 +18,10 @@ public:
 	~GLFW() { glfwTerminate(); printf("Terminated GLFW\n"); }
 } instance;
 
+void glError(GLenum, GLenum, GLuint, GLenum, GLsizei, const GLchar* message, const void*) {
+	fprintf(stderr, "OpenGL Error:\n%s\n", message);
+}
+
 GLApplication::GLApplication(const char* title, int width, int height, bool vsync) {
 	// set window parameters
 	glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);
@@ -38,6 +42,9 @@ GLApplication::GLApplication(const char* title, int width, int height, bool vsyn
 	assert(gladLoadGLLoader((GLADloadproc)glfwGetProcAddress));
 	glViewport(0, 0, width, height);
 
+	glEnable(GL_DEBUG_OUTPUT);
+	glDebugMessageCallback(glError, nullptr);
+	glDebugMessageInsert(0, 0, 0, 0, 0, "Testing");
 }
 
 GLApplication::~GLApplication() {

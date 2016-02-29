@@ -18,8 +18,11 @@ void SphereSystem::shutdown() {
 }
 
 void SphereSystem::render() {
-	// TODO update dirty
-	glDrawArraysInstanced(GL_TRIANGLE_STRIP, 0, 4, spheres.size());
+	glUseProgram(shader);
+	// TODO update dirty SSBO data
+//	glDrawArraysInstanced(GL_TRIANGLE_STRIP, 0, 4, spheres.size());
+	glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
+	glUseProgram(0);
 }
 
 void SphereSystem::addSphere(float x, float y, float z, float r) {

@@ -13,9 +13,11 @@ struct VAO {	// only one is needed, bind immediately
 
 class Tracer : public GLApplication {
 public:
-	Tracer(int width, int height) : GLApplication("Tracer", width, height) {
+	Tracer(int width, int height) : GLApplication("Tracer", width, height, false) {
 		spheres.startup();
 		spheres.addSphere(0.0f, 0.0f, 0.0f, 0.5f);
+
+		glClearColor(0.2f, 0.2f, 0.2f, 1.0f);
 
 		printf("Initialized\n");
 	}
@@ -30,6 +32,7 @@ public:
 	}
 
 	virtual void render() override {
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 		spheres.render();
 	}
 

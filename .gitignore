@@ -237,3 +237,5 @@ _Pvt_Extensions
 /glfw/docs/html
 /glfw/lib-mingw-w64
 /glfw/COPYING.txt
+/glfw/lib-vc2013
+/glfw/lib-vc2012
