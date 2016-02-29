@@ -234,3 +234,6 @@ _Pvt_Extensions
 
 # FAKE - F# Make
 .fake/
+/glfw/docs/html
+/glfw/lib-mingw-w64
+/glfw/COPYING.txt
