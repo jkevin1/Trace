@@ -14,7 +14,7 @@ struct VAO {	// only one is needed, bind immediately
 class Tracer : public GLApplication {
 public:
 	Tracer(int width, int height) : GLApplication("Tracer", width, height, false) {
-		spheres.startup();
+		spheres.startup(width, height);
 		spheres.addSphere(0.0f, 0.0f, 0.0f, 0.5f);
 
 		glClearColor(0.2f, 0.2f, 0.2f, 1.0f);
@@ -51,7 +51,7 @@ int main(int argc, char* argv[]) {
 
 	if (width == 0 || height == 0) {
 		width = 800;
-		height = 600;
+		height = 800;
 	}
 
 	Tracer app(width, height);

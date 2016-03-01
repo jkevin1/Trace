@@ -43,8 +43,7 @@ GLApplication::GLApplication(const char* title, int width, int height, bool vsyn
 	glViewport(0, 0, width, height);
 
 	glEnable(GL_DEBUG_OUTPUT);
-	glDebugMessageCallback(glError, nullptr);
-	glDebugMessageInsert(0, 0, 0, 0, 0, "Testing");
+	glDebugMessageCallback((GLDEBUGPROC)glError, nullptr);
 }
 
 GLApplication::~GLApplication() {

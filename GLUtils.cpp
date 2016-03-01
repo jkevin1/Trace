@@ -78,3 +78,7 @@ GLuint createProgram(const char* vert, const char* frag) {
 	glDeleteShader(fs);
 	return id;
 }
+
+GLuint createTexture(int width, int height, int samples, GLenum format) {
+
+}

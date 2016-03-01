@@ -42,4 +42,8 @@
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="sphere.frag" />
+    <None Include="sphere.vert" />
+  </ItemGroup>
 </Project>

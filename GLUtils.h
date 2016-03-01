@@ -11,3 +11,5 @@ GLuint linkProgram(std::initializer_list<GLuint> shaders);
 
 // helper function that does both stages in one call
 GLuint createProgram(const char* vert, const char* frag);
+
+GLuint createTexture(int width, int height, int samples, GLenum format);
