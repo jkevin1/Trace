@@ -9,7 +9,7 @@ public:
 	SphereSystem();
 	~SphereSystem();
 
-	void startup(int width, int height);
+	void startup(int width, int height, int num);
 	void shutdown();
 
 	void render();
@@ -20,7 +20,6 @@ public:
 	};
 
 	Sphere& operator[](int i) { return spheres[i]; }
-	void addSphere(float x, float y, float z, float r);
 
 private:
 	enum Consts {
@@ -33,6 +32,7 @@ private:
 	std::vector<Sphere> spheres;
 	GLuint textures[NUM_TEXTURES];
 	GLuint fbos[NUM_FBOS];
+	GLuint depth;
 	int target;
 };
 
